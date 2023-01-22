@@ -1,0 +1,48 @@
+{
+  "name": "sqs-poc",
+  "version": "1.0.0",
+  "description": "AWS SQS POC using CDK",
+  "main": "index.js",
+  "scripts": {
+    "build": "rm -rf cdk/build/* && ./build.js",
+    "cdk": "cdk",
+    "bootstrap:staging": "STAGE=staging yarn cdk bootstrap --profile fp --cloudformation-execution-policies arn:aws:iam::092284993119:policy/cdkCFExecutionPolicy",
+    "synth:staging": "STAGE=staging yarn cdk synth --profile fp",
+    "deploy:staging": "STAGE=staging npm run build && STAGE=staging cdk deploy --profile fp --all"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FrancescoPassanti/sqs-poc.git"
+  },
+  "keywords": [
+    "AWS",
+    "CDK",
+    "SQS"
+  ],
+  "author": "Francesco Passanti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FrancescoPassanti/sqs-poc/issues"
+  },
+  "homepage": "https://github.com/FrancescoPassanti/sqs-poc#readme",
+  "dependencies": {
+    "@fastify/aws-lambda": "^3.1.3",
+    "aws-cdk-lib": "^2.50.0",
+    "aws-lambda": "^1.0.6",
+    "aws-sdk": "^2.916.0",
+    "construct": "^1.0.0",
+    "dotenv": "^16.0.3",
+    "fastify": "^4.9.2"
+  },
+  "devDependencies": {
+    "@aws-cdk/aws-apigatewayv2-alpha": "^2.50.0-alpha.0",
+    "@aws-cdk/aws-apigatewayv2-authorizers-alpha": "^2.50.0-alpha.0",
+    "@aws-cdk/aws-apigatewayv2-integrations-alpha": "^2.50.0-alpha.0",
+    "@anatine/esbuild-decorators": "^0.2.19",
+    "@types/aws-lambda": "^8.10.83",
+    "@types/node": "^18.11.9",
+    "esbuild": "^0.14.49",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.4.1"
+  }
+}

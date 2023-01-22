@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "lib": ["esnext"],
+    "removeComments": true,
+    "moduleResolution": "node",
+    "baseUrl": "./",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "target": "es2017",
+    "outDir": "lib",
+    "allowSyntheticDefaultImports": true,
+    "typeRoots": ["./node_modules/@types"],
+    "paths": {
+      "@src/*": ["./src/*"]
+    }
+  },
+  "include": ["./**/*.ts"],
+  "exclude": ["node_modules/**/*", "cdk/cdk.out/**/*", "cdk/build/**/*"]
+}
